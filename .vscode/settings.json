@@ -45,5 +45,6 @@
         "typeinfo": "cpp"
     },
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4 }"
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4 }",
+    "editor.guides.bracketPairs": "active"
 }
