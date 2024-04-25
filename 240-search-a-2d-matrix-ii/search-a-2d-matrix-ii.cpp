@@ -1,3 +1,10 @@
+static auto _ = []() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    return 0;
+}();
+
 class Solution {
 public:
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
