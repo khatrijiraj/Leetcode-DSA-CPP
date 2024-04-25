@@ -1,6 +1,8 @@
 class Solution {
 public:
-
+    Solution() {
+        ios_base::sync_with_stdio(false), cin.tie(NULL), cout.tie(NULL);
+    }
     vector<int> rowAndMaximumOnes(vector<vector<int>>& mat) {
         int index, max = -1;
         int row = mat.size();
