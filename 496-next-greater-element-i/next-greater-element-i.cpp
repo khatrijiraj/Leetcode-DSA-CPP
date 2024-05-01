@@ -1,6 +1,7 @@
 class Solution {
 public:
     vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
+         ios_base::sync_with_stdio(false);
         unordered_map<int, int> nextGreater;
         stack<int> stk;
 
@@ -8,7 +9,7 @@ public:
             while (!stk.empty() && stk.top() <= nums2[i]) {
                 stk.pop();
             }
-            
+
             if (!stk.empty()) {
                 nextGreater[nums2[i]] = stk.top();
             } else {
