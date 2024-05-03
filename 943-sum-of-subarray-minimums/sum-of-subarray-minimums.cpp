@@ -1,5 +1,10 @@
 int mod = 1e9 + 7;
 
+#pragma GCC optimize("O3,unroll-loops")
+#pragma GCC target("avx2,bmi,bmi2,lzcnt,popcnt")
+auto __sync_ios_stdio = ios_base::sync_with_stdio(false);
+auto __untie_cin = cin.tie(nullptr);
+
 class Solution {
 public:
     int sumSubarrayMins(vector<int>& arr) {
