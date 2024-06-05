@@ -18,9 +18,6 @@ public:
 
         vector<string> result;
         for (char ch = 'a'; ch <= 'z'; ++ch) {
-            if (mini[ch - 'a'] == 0) {
-                continue;
-            }
             for (int i = 0; i < mini[ch - 'a']; ++i) {
                 result.push_back(string(1, ch));
             }
