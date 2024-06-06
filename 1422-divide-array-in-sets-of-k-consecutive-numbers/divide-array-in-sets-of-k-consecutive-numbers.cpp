@@ -1,6 +1,10 @@
 class Solution {
 public:
     bool isPossibleDivide(vector<int>& nums, int k) {
+        ios::sync_with_stdio(false);
+        cin.tie(nullptr);
+        cout.tie(nullptr);
+
         if (nums.size() % k != 0) {
             return false;
         }
