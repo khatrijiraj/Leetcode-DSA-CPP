@@ -1,6 +1,8 @@
 class Solution {
 public:
     bool isNStraightHand(vector<int>& hand, int groupSize) {
+        ios::sync_with_stdio(false); cin.tie(nullptr); cout.tie(nullptr);
+
         if (hand.size() % groupSize != 0) {
             return false;
         }
