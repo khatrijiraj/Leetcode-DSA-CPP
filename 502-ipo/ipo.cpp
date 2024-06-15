@@ -1,11 +1,9 @@
-#include <algorithm>
-#include <queue>
-#include <vector>
-
 class Solution {
 public:
     int findMaximizedCapital(int k, int w, vector<int>& profits,
                              vector<int>& capital) {
+
+        ios_base::sync_with_stdio(false);
         vector<pair<int, int>> projects;
         for (int i = 0; i < profits.size(); i++) {
             projects.emplace_back(capital[i], profits[i]);
