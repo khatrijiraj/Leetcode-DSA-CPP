@@ -1,8 +1,13 @@
 class Solution {
 public:
+    Solution() {
+        ios::sync_with_stdio(0);
+        cout.tie(0);
+        cin.tie(0);
+    }
     int maxProfitAssignment(vector<int>& difficulty, vector<int>& profit,
                             vector<int>& worker) {
-        
+
         vector<pair<int, int>> jobs(difficulty.size());
 
         for (int i = 0; i < difficulty.size(); i++) {
@@ -19,7 +24,7 @@ public:
         int index = 0;
 
         for (auto it : worker) {
-            while(index < difficulty.size() && jobs[index].first <= it){
+            while (index < difficulty.size() && jobs[index].first <= it) {
                 bestprofit = max(bestprofit, jobs[index].second);
                 ++index;
             }
