@@ -1,5 +1,11 @@
 class Solution {
 public:
+    Solution(){
+        ios::sync_with_stdio(0);
+        cin.tie(0);
+        cout.tie(0);
+    }
+
     int maxSatisfied(vector<int>& customers, vector<int>& grumpy, int minutes) {
         int size = customers.size();
         
