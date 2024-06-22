@@ -1,5 +1,10 @@
 class Solution {
 public:
+    Solution(){
+        ios::sync_with_stdio(0);
+        cin.tie(0);
+        cout.tie(0);
+    }
 
     int numberOfSubarrays(vector<int>& nums, int k) {
         vector<int> oddArray(nums.size());
