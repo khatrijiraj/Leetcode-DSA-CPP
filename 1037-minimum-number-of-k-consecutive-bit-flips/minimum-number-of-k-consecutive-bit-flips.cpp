@@ -26,20 +26,20 @@ public:
 
     // optimal approach TC: O(n) SC:O(n)
     int minKBitFlips(vector<int>& nums, int k) {
-        std::queue<int> qu;
+        std::deque<int> dq;
         int size = nums.size();
         int flips = 0;
 
         for (int i = 0; i < size; i++) {
-            if (!qu.empty() && qu.front() < i) {
-                qu.pop();
+            if (!dq.empty() && dq.front() < i) {
+                dq.pop_front();
             }
 
-            if (qu.size() % 2 == nums[i]) {
+            if (dq.size() % 2 == nums[i]) {
                 if (i + k - 1 >= size) {
                     return -1;
                 }
-                qu.push(i + k - 1);
+                dq.push_back(i + k - 1);
                 flips++;
             }
         }
