@@ -1,6 +1,11 @@
 #include <string>
 class Solution {
 public:
+    Solution(){
+        ios::sync_with_stdio(0);
+        cin.tie(0);
+        cout.tie(0);
+    }
     string addBinary(string a, string b) {
         int i = a.length() - 1;
         int j = b.length() - 1;
