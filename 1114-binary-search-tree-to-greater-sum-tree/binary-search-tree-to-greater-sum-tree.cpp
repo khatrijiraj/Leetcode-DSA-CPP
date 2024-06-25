@@ -16,7 +16,7 @@ private:
         if (node == nullptr) {
             return;
         }
-        
+
         traverse(node->right, sum);
 
         sum += node->val;
@@ -26,12 +26,6 @@ private:
     }
 
 public:
-    Solution() {
-        ios::sync_with_stdio(false);
-        cin.tie(0);
-        cout.tie(0);
-    }
-
     TreeNode* bstToGst(TreeNode* root) {
         int sum = 0;
         traverse(root, sum);
