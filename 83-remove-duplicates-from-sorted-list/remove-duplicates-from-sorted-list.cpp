@@ -10,11 +10,17 @@
  */
 class Solution {
 public:
+    Solution() {
+        ios::sync_with_stdio(false);
+        cin.tie(0);
+        cout.tie(0);
+    }
+
     ListNode* deleteDuplicates(ListNode* head) {
         if (!head || !head->next) {
             return head;
         }
-        
+
         ListNode* current = head;
         while (current->next) {
             if (current->val == current->next->val) {
@@ -25,7 +31,7 @@ public:
                 current = current->next;
             }
         }
-        
+
         return head;
     }
 };
