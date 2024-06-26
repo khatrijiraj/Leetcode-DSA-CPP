@@ -1,5 +1,11 @@
 class Solution {
 public:
+    Solution() {
+        ios::sync_with_stdio(false);
+        cin.tie(0);
+        cout.tie(0);
+    }
+
     uint32_t reverseBits(uint32_t n) {
         uint32_t reversed = 0;
 
