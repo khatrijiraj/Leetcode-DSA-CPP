@@ -7,16 +7,20 @@ public:
     }
 
     bool isPerfectSquare(int num) {
-        if(num < 0){
+        if(num == 1){
+            return true;
+        }
+
+        if(num <= 2){
             return false;
         }
 
-        long low = 0;
-        int high = num;
+        int low = 2;
+        int high = num/2;
 
         while (low <= high) {
-            long mid = low + (high - low) / 2;
-            long square = mid * mid;
+            double mid = low + (high - low) / 2;
+            double square = mid * mid;
             if (square == num) {
                 return true;
             } else if (square > num) {
