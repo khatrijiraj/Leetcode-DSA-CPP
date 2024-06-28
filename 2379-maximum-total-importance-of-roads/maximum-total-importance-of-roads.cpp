@@ -1,5 +1,11 @@
 class Solution {
 public:
+    Solution() {
+        ios::sync_with_stdio(false);
+        cin.tie(0);
+        cout.tie(0);
+    }
+    
     long long maximumImportance(int n, vector<vector<int>>& roads) {
         vector<int> degree(n, 0);
 
