@@ -1,5 +1,11 @@
 class Solution {
 public:
+    Solution() {
+        ios::sync_with_stdio(0);
+        cin.tie(0);
+        cout.tie(0);
+    }
+
     int candy(vector<int>& ratings) {
         int n = ratings.size();
 
