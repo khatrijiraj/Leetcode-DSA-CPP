@@ -10,22 +10,31 @@
  * right(right) {}
  * };
  */
+#include <stack>
 class Solution {
 public:
     vector<int> preorderTraversal(TreeNode* root) {
         vector<int> result;
-        stack<TreeNode*> stk;
-        TreeNode* current = root;
 
-        while (current != nullptr || !stk.empty()) {
-            while (current != nullptr) {
-                result.push_back(current->val);
-                stk.push(current);
-                current = current->left;
-            }
-            current = stk.top();
+        if (!root) {
+            return result;
+        }
+
+        stack<TreeNode*> stk;
+        stk.push(root);
+
+        while (!stk.empty()) {
+            root = stk.top();
             stk.pop();
-            current = current->right;
+
+            result.push_back(root->val);
+
+            if (root->right) {
+                stk.push(root->right);
+            }
+            if (root->left) {
+                stk.push(root->left);
+            }
         }
 
         return result;
