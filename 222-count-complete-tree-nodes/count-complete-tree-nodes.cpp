@@ -12,34 +12,28 @@
  */
 class Solution {
 public:
-    Solution() {
-        ios::sync_with_stdio(false);
-        cin.tie(0);
-        cout.tie(0);
-    }
-
     int countNodes(TreeNode* root) {
         if (!root) {
             return 0;
         }
 
-        int left = getHeight(root->left);
-        int right = getHeight(root->right);
+        int lefth = getHeight(root->left);
+        int righth = getHeight(root->right);
 
-        if (left == right) {
-            return (1 << left) + countNodes(root->right);
+        if (lefth == righth) {
+            return (1 << lefth) + countNodes(root->right);
         } else {
-            return (1 << right) + countNodes(root->left);
+            return (1 << righth) + countNodes(root->left);
         }
     }
 
-private:
     int getHeight(TreeNode* node) {
-        int height = 0;
+        int ht = 0;
+
         while (node) {
-            height++;
+            ht++;
             node = node->left;
         }
-        return height;
+        return ht;
     }
 };
