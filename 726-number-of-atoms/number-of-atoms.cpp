@@ -1,5 +1,11 @@
 class Solution {
 public:
+    Solution() {
+        ios::sync_with_stdio(0);
+        cin.tie(0);
+        cout.tie(0);
+    }
+
     string countOfAtoms(string formula) {
         stack<unordered_map<string, int>> stk;
         stk.push({});
