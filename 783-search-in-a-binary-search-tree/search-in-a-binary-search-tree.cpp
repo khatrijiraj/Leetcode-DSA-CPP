@@ -13,7 +13,7 @@
 class Solution {
 public:
     TreeNode* searchBST(TreeNode* root, int val) {
-        /* if (!root) {
+        if (!root) {
             return nullptr;
         }
 
@@ -23,15 +23,15 @@ public:
             return searchBST(root->left, val);
         } else {
             return searchBST(root->right, val);
-        } */
-
-        while (root && root->val != val) {
-            if (root->val > val) {
-                root = root->left;
-            } else {
-                root = root->right;
-            }
         }
-        return root;
+        /*
+                while (root && root->val != val) {
+                    if (root->val > val) {
+                        root = root->left;
+                    } else {
+                        root = root->right;
+                    }
+                }
+                return root; */
     }
 };
