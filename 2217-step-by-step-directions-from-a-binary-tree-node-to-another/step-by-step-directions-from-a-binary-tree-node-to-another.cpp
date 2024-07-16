@@ -38,6 +38,12 @@ private:
     }
 
 public:
+    Solution(){
+        ios::sync_with_stdio(0);
+        cin.tie(0);
+        cout.tie(0);
+    }
+    
     string getDirections(TreeNode* root, int startValue, int destValue) {
         string rootToSrc = "";
         string rootToDst = "";
