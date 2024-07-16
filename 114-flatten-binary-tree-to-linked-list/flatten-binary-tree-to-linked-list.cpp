@@ -12,11 +12,12 @@
  */
 class Solution {
 public:
-    Solution(){
+    Solution() {
         ios::sync_with_stdio(0);
         cin.tie(0);
         cout.tie(0);
     }
+    
     void flatten(TreeNode* root) {
         if (!root) {
             return;
