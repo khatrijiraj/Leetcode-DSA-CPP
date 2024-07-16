@@ -23,6 +23,12 @@ private:
     }
 
 public:
+    Solution() {
+        ios::sync_with_stdio(false);
+        cin.tie(0);
+        cout.tie(0);
+    }
+    
     TreeNode* deleteNode(TreeNode* root, int key) {
         if (!root) {
             return nullptr;
