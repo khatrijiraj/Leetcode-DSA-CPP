@@ -40,6 +40,12 @@ private:
     }
 
 public:
+    Solution(){
+        ios::sync_with_stdio(0);
+        cin.tie(0);
+        cout.tie(0);
+    }
+    
     vector<vector<int>> buildMatrix(int k, vector<vector<int>>& rowConditions,
                                     vector<vector<int>>& colConditions) {
         vector<int> rowOrder = topologicalSort(rowConditions, k);
