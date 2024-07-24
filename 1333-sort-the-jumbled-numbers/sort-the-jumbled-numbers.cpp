@@ -1,5 +1,11 @@
 class Solution {
 public:
+    Solution(){
+        ios::sync_with_stdio(0);
+        cin.tie(0);
+        cout.tie(0);
+    }
+    
     vector<int> sortJumbled(vector<int>& mapping, vector<int>& nums) {
         vector<pair<int, int>> converted;
         for (int i = 0; i < nums.size(); i++) {
