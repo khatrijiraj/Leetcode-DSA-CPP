@@ -7,9 +7,10 @@ public:
             int sum = 0;
             int place = 1;
 
-            if(temp == 0){
+            if (temp == 0) {
                 sum = mapping[0];
             }
+            
             while (temp) {
                 int last = temp % 10;
                 sum += place * (mapping[last]);
