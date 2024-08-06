@@ -12,6 +12,9 @@ public:
         int result = 0;
         for (int i = 0; i < 26; i++) {
             result += freq[i] * (i / 8 + 1);
+            if(freq[i] == 0){
+                break;
+            }
         }
 
         return result;
