@@ -2,22 +2,21 @@ class Solution {
 public:
     int longestPalindrome(string s) {
         unordered_map<char, int> mpp;
-        for (auto& ch : s) {
-            mpp[ch]++;
+        for (auto& it : s) {
+            mpp[it]++;
         }
 
         int length = 0;
-        bool oddfound = false;
-        for (auto& ch : mpp) {
-            if (ch.second % 2 == 0) {
-                length += ch.second;
+        bool odd = false;
+        for (auto& it : mpp) {
+            if (it.second % 2 == 0) {
+                length += it.second;
             } else {
-                length += ch.second - 1;
-                oddfound = true;
+                length += it.second - 1;
+                odd = true;
             }
         }
-
-        if (oddfound) {
+        if (odd) {
             length++;
         }
 
