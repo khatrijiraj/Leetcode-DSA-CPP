@@ -1,6 +1,6 @@
 class Solution {
 private:
-    int solve(int index, int curror, int& maxior, vector<int>& nums) {
+    int solve(int index, int curror, int maxior, vector<int>& nums) {
         // base case
         if (index == nums.size()) {
             if (curror == maxior) {
