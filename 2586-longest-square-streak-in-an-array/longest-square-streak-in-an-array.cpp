@@ -3,7 +3,7 @@ public:
     int longestSquareStreak(vector<int>& nums) {
         sort(nums.begin(), nums.end());
 
-        unordered_set<long long> stt;
+        unordered_set<long> stt;
 
         for (auto it : nums) {
             stt.insert(it);
@@ -12,7 +12,7 @@ public:
         int maxi = 0;
 
         for (auto it : nums) {
-            long long current = it;
+            long current = it;
             int streak = 1;
 
             while (stt.find(current * current) != stt.end()) {
