@@ -1,8 +1,7 @@
 class Solution {
 public:
     int longestSquareStreak(vector<int>& nums) {
-        sort(nums.begin(), nums.end());
-
+        // sort(nums.begin(), nums.end());
         unordered_set<long> stt;
 
         for (auto it : nums) {
