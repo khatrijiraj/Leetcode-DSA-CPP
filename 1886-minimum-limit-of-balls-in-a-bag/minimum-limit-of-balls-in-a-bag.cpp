@@ -19,7 +19,7 @@ public:
         int low = 1;
         int high = *max_element(nums.begin(), nums.end());
 
-        int result = high;
+        int result;
 
         while (low <= high) {
             int mid = low + (high - low) / 2;
