@@ -2,33 +2,35 @@ class Solution {
 public:
     vector<bool> isArraySpecial(vector<int>& nums,
                                 vector<vector<int>>& queries) {
-        /* BRUTEE TLE
+        /*
+        BRUTEE TLE
 
-               vector<bool> paritycheck(nums.size() - 1, false);
+                       vector<bool> paritycheck(nums.size() - 1, false);
 
-                for (int i = 0; i < nums.size() - 1; i++) {
-                    paritycheck[i] = nums[i] % 2 == nums[i + 1] % 2;
-                }
-
-                vector<bool> result;
-
-                for (auto it : queries) {
-                    int start = it[0];
-                    int end = it[1];
-
-                    bool isspecial = true;
-
-                    for (int i = start; i < end; i++) {
-                        if (paritycheck[i]) {
-                            isspecial = false;
-                            break;
+                        for (int i = 0; i < nums.size() - 1; i++) {
+                            paritycheck[i] = nums[i] % 2 == nums[i + 1] % 2;
                         }
-                    }
 
-                    result.push_back(isspecial);
-                }
+                        vector<bool> result;
 
-                return result; */
+                        for (auto it : queries) {
+                            int start = it[0];
+                            int end = it[1];
+
+                            bool isspecial = true;
+
+                            for (int i = start; i < end; i++) {
+                                if (paritycheck[i]) {
+                                    isspecial = false;
+                                    break;
+                                }
+                            }
+
+                            result.push_back(isspecial);
+                        }
+
+                        return result;
+        */
 
         int n = nums.size();
 
