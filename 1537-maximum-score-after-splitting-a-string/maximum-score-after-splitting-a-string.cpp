@@ -70,6 +70,7 @@ public:
             ones++;
         }
 
+        //score =  (zeroinleft - oneinleft) + totalone
         return best + ones;
     }
 };
