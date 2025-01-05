@@ -1,5 +1,5 @@
 class Solution {
-    void markrow(int i, vector<vector<int>>& matrix, int n) {
+    /* void markrow(int i, vector<vector<int>>& matrix, int n) {
         for (int j = 0; j < n; j++) {
             if (matrix[i][j] != 0) {
                 matrix[i][j] = -1;
@@ -13,7 +13,7 @@ class Solution {
                 matrix[i][j] = -1;
             }
         }
-    }
+    } */
 
 public:
     void setZeroes(vector<vector<int>>& matrix) {
