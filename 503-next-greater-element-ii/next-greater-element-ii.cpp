@@ -1,23 +1,30 @@
 class Solution {
 public:
     vector<int> nextGreaterElements(vector<int>& nums) {
-        ios_base::sync_with_stdio(false);
+        /* doubling the nums array hypothetical
+        and then applying monotonic logic
 
-        int n = nums.size();
-        vector<int> nextgreater(n, -1);
+        TC- O(4N)
+        SC - O(2N)
+        */
         stack<int> stk;
+        int n = nums.size();
+
         for (int i = 2 * n - 1; i >= 0; i--) {
-            while (!stk.empty() && stk.top() <= nums[i % n]) {
+            int curr = nums[i % n];
+            while (!stk.empty() && stk.top() <= curr) {
                 stk.pop();
             }
 
             if (i < n) {
-                if (!stk.empty()) {
-                    nextgreater[i] = stk.top();
+                if (stk.empty()) {
+                    nums[i % n] = -1;
+                } else {
+                    nums[i % n] = stk.top();
                 }
             }
-            stk.push(nums[i % n]);
+            stk.push(curr);
         }
-        return nextgreater;
+        return nums;
     }
 };
