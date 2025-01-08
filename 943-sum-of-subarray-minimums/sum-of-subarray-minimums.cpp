@@ -1,45 +1,49 @@
-int mod = 1e9 + 7;
-
-#pragma GCC optimize("O3,unroll-loops")
-#pragma GCC target("avx2,bmi,bmi2,lzcnt,popcnt")
-auto __sync_ios_stdio = ios_base::sync_with_stdio(false);
-auto __untie_cin = cin.tie(nullptr);
-
 class Solution {
+private:
+    vector<int> PrevSmallerEle(vector<int>& arr) {
+        int n = arr.size();
+        stack<int> stk;
+        vector<int> PSE(n, 0);
+        for (int i = 0; i < n; i++) {
+            while (!stk.empty() && arr[i] <= arr[stk.top()]) {
+                stk.pop();
+            }
+            PSE[i] = stk.empty() ? -1 : stk.top();
+            stk.push(i);
+        }
+        return PSE;
+    }
+
+    vector<int> NextSmallerEle(vector<int>& arr) {
+        int n = arr.size();
+        stack<int> stk;
+        vector<int> NSE(n, 0);
+        for (int i = n - 1; i >= 0; i--) {
+            while (!stk.empty() && arr[i] < arr[stk.top()]) {
+                stk.pop();
+            }
+            NSE[i] = stk.empty() ? n : stk.top();
+            stk.push(i);
+        }
+        return NSE;
+    }
+
 public:
     int sumSubarrayMins(vector<int>& arr) {
-        int n = arr.size();
-        vector<int> leftOptions;
-        vector<int> rightOptions;
-        stack<pair<int, int>> stk;
+        vector<int> PSE = PrevSmallerEle(arr);
+        vector<int> NSE = NextSmallerEle(arr);
+
+        int result = 0;
+        int mod = 1e9 + 7;
 
         for (int i = 0; i < arr.size(); i++) {
-            while (!stk.empty() && stk.top().first >= arr[i]) {
-                stk.pop();
-            }
-            leftOptions.push_back((stk.empty() ? i + 1 : i - stk.top().second));
-            stk.push({arr[i], i});
+            int pre = i - PSE[i];
+            int nxt = NSE[i] - i;
+
+            long long curr = (1l * pre * nxt * arr[i]) % mod;
+            result = (result + curr) % mod;
         }
 
-        while (!stk.empty())
-            stk.pop();
-
-        for (int i = arr.size() - 1; i >= 0; i--) {
-            while (!stk.empty() && stk.top().first > arr[i]) {
-                stk.pop();
-            }
-            rightOptions.push_back(
-                (stk.empty() ? n - i : stk.top().second - i));
-            stk.push({arr[i], i});
-        }
-        reverse(rightOptions.begin(), rightOptions.end());
-
-        long long res = 0;
-        for (int i = 0; i < arr.size(); i++) {
-            long long curr =
-                (1ll * leftOptions[i] * rightOptions[i] * arr[i]) % mod;
-            res = (res + curr) % mod;
-        }
-        return (int)res;
+        return (int)result;
     }
 };
