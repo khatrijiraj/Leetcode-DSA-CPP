@@ -1,28 +1,32 @@
 class Solution {
 public:
     vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
-         ios_base::sync_with_stdio(false);
-        unordered_map<int, int> nextGreater;
+        int size2 = nums2.size();
+
+        unordered_map<int, int> mpp;
+        vector<int> result;
         stack<int> stk;
 
-        for (int i = nums2.size() - 1; i >= 0; i--) {
-            while (!stk.empty() && stk.top() <= nums2[i]) {
+        for (int i = size2 - 1; i >= 0; i--) {
+            int curr = nums2[i];
+
+            while (!stk.empty() && stk.top() <= curr) {
                 stk.pop();
             }
 
-            if (!stk.empty()) {
-                nextGreater[nums2[i]] = stk.top();
+            if (stk.empty()) {
+                mpp[curr] = -1;
             } else {
-                nextGreater[nums2[i]] = -1;
+                mpp[curr] = stk.top();
             }
-            stk.push(nums2[i]);
+
+            stk.push(curr);
         }
 
-        vector<int> ans;
-        for (int num : nums1) {
-            ans.push_back(nextGreater[num]);
+        for (auto it : nums1) {
+            result.push_back(mpp[it]);
         }
 
-        return ans;
+        return result;
     }
 };
