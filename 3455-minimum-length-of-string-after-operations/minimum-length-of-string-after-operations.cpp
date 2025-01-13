@@ -7,13 +7,13 @@ public:
 
         vector<int> mpp(26, 0);
 
-        for (char it : s) {
+        for (char &it : s) {
             mpp[it - 'a']++;
         }
 
         int res = 0;
 
-        for (int it : mpp) {
+        for (int &it : mpp) {
             if (it == 0) {
                 continue;
             }
