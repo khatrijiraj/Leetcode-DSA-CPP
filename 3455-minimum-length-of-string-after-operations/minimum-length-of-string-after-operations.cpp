@@ -1,6 +1,10 @@
 class Solution {
 public:
     int minimumLength(string s) {
+        ios::sync_with_stdio(0);
+        cin.tie(0);
+        cout.tie(0);
+
         vector<int> mpp(26, 0);
 
         for (char it : s) {
