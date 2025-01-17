@@ -12,6 +12,9 @@ public:
             then the result xor will be 0 since all elements are coming twice
             if the derived array is valid.
 
+            we can also count number of 1's in derived array
+            if they are even then they will cancel each other else no
+
             TC:- O(N)
 
             cool observation based question
