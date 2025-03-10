@@ -1,3 +1,9 @@
+static auto init = []() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    return nullptr;
+}();
+
 class Solution {
 private:
     bool isVowel(char c) {
@@ -49,7 +55,7 @@ public:
             while (left < word.size() && mpp.size() == 5 && conso == k) {
                 count += nextConsonant[right] - right;
                 char lefti = word[left];
-                
+
                 if (isVowel(lefti)) {
                     mpp[lefti]--;
                     if (mpp[lefti] == 0) {
@@ -61,7 +67,7 @@ public:
 
                 left++;
             }
-            
+
             right++;
         }
 
