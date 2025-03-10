@@ -5,11 +5,6 @@ private:
     }
 
 public:
-    Solution() {
-        ios::sync_with_stdio(false);
-        cin.tie(nullptr);
-    }
-    
     long long countOfSubstrings(string word, int k) {
         long long count = 0;
 
