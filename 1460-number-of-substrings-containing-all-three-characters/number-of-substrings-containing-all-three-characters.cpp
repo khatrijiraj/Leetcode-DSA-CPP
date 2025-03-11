@@ -2,10 +2,8 @@ class Solution {
 public:
     int numberOfSubstrings(string s) {
         int result = 0;
-
         int i = 0;
         int j = 0;
-
         int size = s.length();
 
         vector<int> mpp(3, 0);
